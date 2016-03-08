@@ -357,9 +357,12 @@ extension GMStepper {
         label.userInteractionEnabled = true
 
         UIView.animateWithDuration(self.labelSlideDuration, animations: {
-            self.label.center = self.labelOriginalCenter
-            self.rightButton.backgroundColor = self.buttonsBackgroundColor
-            self.leftButton.backgroundColor = self.buttonsBackgroundColor
+            if self.labelOriginalCenter != nil {
+                self.label.center = self.labelOriginalCenter
+                self.rightButton.backgroundColor = self.buttonsBackgroundColor
+                self.leftButton.backgroundColor = self.buttonsBackgroundColor
+            }
+            
         })
     }
 }
